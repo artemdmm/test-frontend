@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "login": "login",
+            "password": "74a49c698dbd3c12e36b0b287447d833f74f3937ff132ebff7054baa18623c35a705bb18b82e2ac0384b5127db97016e63609f712bc90e3506cfbea97599f46f",
+            "name": "Имя"
+        },
+        {
+            "login": "login2",
+            "password": "6ad275d26c200e81534d9996183c8748ddfabc7b0a011a90f46301626d709923474703cacab0ff8b67cd846b6cb55b23a39b03fbdfb5218eec3373cf7010a166",
+            "name": "Имя 2"
+        }
+    ]
+}

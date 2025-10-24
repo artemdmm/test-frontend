@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+@media (max-device-width:680px) or (max-width:680px){
+    .Navbox {
+        padding: 0 10px!important;
+    }
+    .NavRight {
+        gap: 0px!important;
+    }
+    .Btn-Header {
+        width: 106px!important;
+        height: 36px!important;
+    }
+    .TitleText {
+        font-size: 28px!important;
+        line-height: 39px!important;
+    }
+    .MainBlock {
+        width: 96%!important;
+        gap: 30px!important;
+        padding: 38px 0!important;
+    }
+    .HeadBlock {
+        gap: 35px!important;
+        height: 213px!important;
+    }
+    .CardBlock {
+        flex-direction: column;
+    }
+    .Card {
+        width: 94%!important;
+        margin: auto;
+    }
+}
+.Navbox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #000;
+    padding: 0 70px;
+}
+.NavLogo {
+    width: 53.27px;
+    height: 22.66px;
+}
+.NavRight {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.NavText {
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.Btn-Header {
+    width: 186px;
+    height: 40px;
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border-color: #FF685B;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #FFF;
+    color: #FF685B;
+}
+.MainBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0px;
+    width: 72%;
+    gap: 80px;
+    margin: auto;
+}
+.HeadBlock {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    height: 280px;
+}
+.TitleText {
+    font-size: 58px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    margin: 0;
+}
+.Btn {
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 14px;
+    border-color: #FF685B;
+    border-width: 1px;
+    border-style: solid;
+}
+.Style-1 {
+    background-color: #FF685B;
+    color: #FFF;
+}
+.Style-2 {
+    background-color: #FFF;
+    color: #FF685B;
+}
+.BtnBlock {
+    display: flex;
+    gap: 10px;
+}
+.CardBlock {
+    display: flex;
+    gap: 30px;
+}
+.Card {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 328px;
+    padding: 35px 40px;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+}
+.CardImage {
+    width: 72px;
+    height: 72px;
+    background-color: #E74040;
+    border-radius: 36px;
+}
+.CardImage img {
+    margin: 20px 20px;
+}
+.CardTitle {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    margin: 0;
+}
+.BreakLine {
+    width: 50px;
+    height: 2px;
+    background-color: #E74040;
+}
+.CardDescription {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737373;
+    margin: 0;
+}
+.Btn:hover {
+    cursor: pointer;
+}
+.Style-1:hover {
+    background-color: #ff9086;
+    transition-duration: 0.2s;
+}
+.Style-2:hover {
+    background-color: #ffefee;
+    transition-duration: 0.2s;
+}
+.Btn-Header:hover {
+    cursor: pointer;
+    background-color: #ffefee;
+    transition-duration: 0.2s;
+}
