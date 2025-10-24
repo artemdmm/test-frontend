@@ -1,2 +1,2 @@
-call npm start
+call serve -s build
 pause
