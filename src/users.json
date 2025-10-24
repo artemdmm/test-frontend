@@ -2,12 +2,12 @@
     "users": [
         {
             "login": "login",
-            "password": "74a49c698dbd3c12e36b0b287447d833f74f3937ff132ebff7054baa18623c35a705bb18b82e2ac0384b5127db97016e63609f712bc90e3506cfbea97599f46f",
+            "password": "591f110c5f0e1bdce3ce99ee4d25a60959f343e90d120e4d473e3ccae5811d5d07cd991a64b6f18ef670b772d48adbb9c08206bb99e621b60046b3921b204b77",
             "name": "Имя"
         },
         {
             "login": "login2",
-            "password": "6ad275d26c200e81534d9996183c8748ddfabc7b0a011a90f46301626d709923474703cacab0ff8b67cd846b6cb55b23a39b03fbdfb5218eec3373cf7010a166",
+            "password": "66ee6d1c4c395d6a5e704a7e38f7592cb8a62999b1909bea5a60261854131db4e2f938edd5975c016419d5f775e4ae17ed111b61e2571afe5e07a7077d423d7a",
             "name": "Имя 2"
         }
     ]

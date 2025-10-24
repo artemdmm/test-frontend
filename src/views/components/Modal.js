@@ -8,14 +8,20 @@ export const Modal = ({ closeModal, onSubmit, errorId }) => {
       password: ""
     }
   );
-  const [errors, setErrors] = useState(false);
+  const [errors, setErrors] = useState(0);
 
   const validateForm = () => {
     if (formState.login && formState.password) {
-      setErrors(false);
-      return true;
+      if (formState.password.length >= 8) {
+        setErrors(0);
+        return true;
+      }
+      else {
+        setErrors(2);
+        return false;
+      }
     } else {
-      setErrors(true);
+      setErrors(1);
       return false;
     }
   };
@@ -48,9 +54,10 @@ export const Modal = ({ closeModal, onSubmit, errorId }) => {
             <label htmlFor="password" className="CardTitle">Пароль</label>
             <input name="password" type="password" onChange={handleChange} value={formState.password}/>
           </div>
-          {errors && <div className="error">{`Введите все поля`}</div>}
-          {!errors && errorId === 1 && <div className="error">{`Пользователь не найден`}</div>}
-          {!errors && errorId === 2 && <div className="error">{`Пароль неверный`}</div>}
+          {errors === 1 && <div className="error">{`Введите все поля`}</div>}
+          {errors === 2 && <div className="error">{`Пароль должен иметь не меньше 8 символов`}</div>}
+          {errors === 0 && errorId === 1 && <div className="error">{`Пользователь не найден`}</div>}
+          {errors === 0 && errorId === 2 && <div className="error">{`Пароль неверный`}</div>}
           <button type="submit" className="Btn Style-1" onClick={handleSubmit}>
             Войти
           </button>

@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import users from '../users.json';
 
 export const Main = ({ setModalOpen, userIdLogin, logout }) => {
   const navigate = useNavigate(); 
@@ -14,21 +13,15 @@ export const Main = ({ setModalOpen, userIdLogin, logout }) => {
 
   return (
     <div className="MainBlock">
-        {userIdLogin < 0 && <div className="HeadBlock">
+        <div className="HeadBlock">
             <h1 className="TitleText" id="headline sec-">Место для получения медицинской помощи</h1>
             <div className="BtnBlock">
-                <button className="Btn Style-1" id="headline sec-" onClick={() => setModalOpen(true)}>Войти</button>
-                <button className="Btn Style-2" id="headline sec-" onClick={() => routeChange('contacts')}>Контакты</button>
+                {userIdLogin < 0 && <button className="Btn Style-1" onClick={() => setModalOpen(true)}>Войти</button>}
+                {userIdLogin > -1 && <button className="Btn Style-1" onClick={() => routeChange('cabinet')}>Личный кабинет</button>}
+                <button className="Btn Style-2" onClick={() => routeChange('contacts')}>Контакты</button>
             </div>
-        </div>}
-        {userIdLogin > -1 && <div className="HeadBlock">
-            <h1 className="TitleText" id="headline sec-">Привет, {users.users[userIdLogin].name}</h1>
-            <div className="BtnBlock">
-                <button className="Btn Style-1" id="headline sec-" onClick={() => logout()}>Выйти из аккаунта</button>
-                <button className="Btn Style-2" id="headline sec-" onClick={() => routeChange('contacts')}>Перейти в контакты</button>
-            </div>
-        </div>}
-        {userIdLogin < 0 && <div className="CardBlock">
+        </div>
+        <div className="CardBlock">
             <div className="Card">
                 <div className="CardImage"><img src={require('../img/003-cardiogram.png')} alt="Иконка №1" /></div>
                 <h5 className="CardTitle">Онлайн-прием</h5>
@@ -47,7 +40,7 @@ export const Main = ({ setModalOpen, userIdLogin, logout }) => {
                 <div className="BreakLine" />
                 <p className="CardDescription">Рыба текст</p>
             </div>
-        </div>}
+        </div>
     </div>
   );
 }

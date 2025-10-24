@@ -1,8 +1,10 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { sha512 } from 'crypto-hash';
+import { useLocalStorage } from "react-use";
 import { useState } from "react";
 import { Main } from './views/Main';
 import { Contacts } from './views/Contacts';
+import { Cabinet } from './views/Cabinet';
 import { Modal } from './views/components/Modal';
 import './App.css';
 import './style/Main.css';
@@ -10,7 +12,7 @@ import users from './users.json';
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [userIdLogin, setUserIdLogin] = useState(-1);
+  const [userIdLogin, setUserIdLogin] = useLocalStorage('user_id', -1);
   const [errorId, setErrorId] = useState(0);
 
   const handleSubmit = async (userCred) => {
@@ -49,8 +51,8 @@ function App() {
             <Link className="NavLogo" to="/"><img src={require('./img/logo.svg').default } alt="Логотип" /></Link>
             <div className="NavRight">
               <Link className="NavText" to="/contacts">Контакты</Link>
-              {userIdLogin < 0 && <button className="Btn-Header" id="headline sec-" onClick={() => setModalOpen(true)}>Войти</button>}
-              {userIdLogin > -1 && <button className="Btn-Header" id="headline sec-" onClick={() => logout()}>Выйти</button>}
+              {userIdLogin < 0 && <button className="Btn-Header" onClick={() => setModalOpen(true)}>Войти</button>}
+              {userIdLogin > -1 && <button className="Btn-Header" onClick={() => logout()}>Выйти</button>}
             </div>
           </nav>
 
@@ -58,6 +60,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Main setModalOpen={ setModalOpen } userIdLogin={ userIdLogin } logout={ logout } />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/cabinet" element={
+              (userIdLogin > -1 && <Cabinet userIdLogin={ userIdLogin } logout={ logout } />) || 
+              (userIdLogin < 0 && <Navigate to="/" />)
+            } />
           </Routes>
         </BrowserRouter>
         {modalOpen && (
